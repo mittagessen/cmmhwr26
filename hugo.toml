@@ -1,0 +1,143 @@
+baseURL = 'https://cmmhwr26'
+languageCode = 'en-us'
+title = 'ICDAR 2026 Competition on Multilingual Medieval Handwriting Recognition'
+theme = 'typo'
+
+[taxonomies]
+tag = 'tags'
+
+[params]
+# Home meta description
+description = "ICDAR 2026 Competition on Multilingual Medieval Handwriting Recognition"
+
+# Appearance settings
+theme = 'auto'
+colorPalette = 'default'
+hideHeader = false
+
+# Intro on main page, content in markdown
+homeIntroTitle = ''
+homeIntroContent = """
+The ICDAR 2026 Competition on Multilingual Medieval Handwriting Recognition
+(CMMHWR26) seeks to evaluate the state of the art in multilingual historical
+handwritten text recognition. Each of the three increasingly difficult tasks is
+designed to assess model generalization and robustness under conditions that
+reflect real-world retrodigitization workflows. 
+
+### Task 1: Multilingual Recognition
+
+evaluates text recognition across medieval manuscripts written in different
+languages. For this task, contestants will receive a dataset containing
+manuscripts written in **nine different languages**, eight Romance and one
+Germanic. Evaluation will be performed on a test set containing material
+written in the same nine languages and similar in style to the furnished
+training set.
+
+### Task 2: Intra-language family generalization
+
+extends Task 1 by evaluating recognition of manuscripts written in a closely
+related (i.e.  Romance) language that is **not present in the training dataset**.
+The target language will be disclosed with the start of the registration
+period, allowing participants to optimize their methods accordingly.
+
+### Task 3: Cross-language family generalization
+
+evaluates accuracy on historical material linguistically dissimilar to the
+languages present in the training dataset. The test set will consist of
+manuscripts with similar handwriting styles to the training set, written in a
+**non-Romance European language** undisclosed to the participants in advance. 
+
+## Schedule
+
+{{< rawhtml >}}
+<div style="display:table; width:100%;">
+<table>
+  <thead></thead>
+  <tbody>
+    <tr><td>21 January 2026</td><td>Competition opens; start of registration period; training data release</td></tr>
+    <tr><td>21 March 2026</td><td>Registration deadline for participants; test data release</td></tr>
+    <tr><td>3 April 2026</td><td>Deadline for system results and short description of systems</td></tr>
+    <tr><td>31 August - 2 September 2026</td><td>Presentation of results at ICDAR 2026 in Vienna</td></tr>
+  </tbody>
+</table>
+</div>
+{{</ rawhtml >}}
+
+## Dataset 
+
+The dataset is made up of transribed pages sampled from ~250 European medieval
+manuscripts written between the 8th and 16th centuries CE. All transcriptions
+were prepared by qualified paleographers following common transcription norms,
+which ensures consistency and quality across the corpus.
+
+The data will be published as whole-page facsimiles with line-level
+segmentation in **ALTO XML** format.
+
+## Evaluation
+
+Submission will be evaluated using Character Error Rate (CER) and Word Error
+Rate (WER). For the first task, systems will be ranked based on the unweighted
+average of per-language CER and WER. For the second and third tasks, output on
+the single-language test set will be evaluated.
+## Contact 
+
+If you have any questions or concerns please send a message to <benjamin.kiessling@inria.fr>.
+
+## Organizers
+
+ {{< rawhtml >}}
+ Agnes Boutreux (Centre for Medieval Studies, Toronto, Sorbonne University, Paris)<br/>
+ Bram Cars (Leiden University Centre for the Arts in Society)<br/>
+ Thibault Clérice (ALMAnaCH, Inria, Paris)<br/>
+ Matthias Gille Levenson (University of Versailles Saint Quentin en Yvelines)<br/>
+ Mike Kestemont (University of Antwerp)<br/>
+ Benjamin Kiessling (ALMAnaCH, Inria, Paris)<br/>
+ Ariane Pinche (CIHAM, Lyon)<br/>
+ Caroline Vandyck (University of Antwerp)<br/>
+ Malamatenia Vlachou (IRHT, École des Ponts - ParisTech, Paris)<br/>
+ {{< /rawhtml >}}
+"""
+
+
+singleDateFormat = '25 Nov 2025'
+
+# Collection to display on home
+# homeCollectionTitle = 'Posts'
+# homeCollection = 'posts'
+
+# Lists parameters
+paginationSize = 100
+listSummaries = true
+listDateFormat = '25 Nov 2025'
+
+# Footer
+showFooter = false
+
+# Breadcrumbs
+[params.breadcrumbs]
+enabled = true
+showCurrentPage = true
+home = "~"
+
+# Syntax highlight on code blocks
+[markup]
+[markup.highlight]
+style = 'algol'
+
+# Deploy settings
+
+[[deployment.matchers]]
+pattern = "^.+\\.(js|css|svg|ttf|woff2)$"
+cacheControl = "max-age=31536000, no-transform, public"
+gzip = true
+
+[[deployment.matchers]]
+pattern = "^.+\\.(png|jpg|gif|webp)$"
+cacheControl = "max-age=31536000, no-transform, public"
+gzip = false
+
+[params.giscus]
+enable = false
+
+[params.umami]
+enable = false
